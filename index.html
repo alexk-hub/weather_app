@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="header-title">Weather App</h1>
+        <hr class="header-separator">
+        <h3 class="header-description">Observe weather in different locations</h3>
+    </header>
+    <main>
+        <section class="form-section">
+            <div class="container">
+                <div id="localWeather-wrapper">
+                    <div class="mlw">My local weather</div>
+                    <div id="data-wrapper">
+                        <h1 class="myCity">
+                            <span id="city"></span>
+                            <sup id="country"></sup>
+                        </h1>
+                        <div id="temperature"></div>
+                        <div id="icon"></div>
+                        <div id="conditions"></div>
+                    </div>
+                </div>
+                <div class="form-wrapper">
+                    <form>
+                        <input type="text" placeholder="Search for a city" autofocus>
+                        <button type="submit">SUBMIT</button>
+                        <span class="msg"></span>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="list-section">
+            <div class="container">
+                <ul class="cities"></ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <h4 class="footer-copyright">© Alex Kovalenko 2021</h4>
+        <div class="footer_social">
+            <a href="https://github.com/alexk-hub/weather_app" target="_blank"><span class="fsi github"></span></a>
+            <a href="https://www.linkedin.com/in/alex-kovalenko-b15a48231/" target="_blank"><span class="fsi linkedin"></span></a>
+        </div>
+    </footer>
+</body>
+
+</html>

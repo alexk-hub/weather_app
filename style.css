@@ -1,0 +1,481 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to right, #44adf1 0%, #00add8 100%);
+    margin: 0 5px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+sup {
+    font-size: 0.5em;
+}
+
+/*--------------------Header--------------------*/
+
+header {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.header-title {
+    margin: 20px 0 5px;
+    font-weight: 300;
+    font-size: 2.3em;
+    color: #e6f2ff;
+}
+
+.header-separator {
+    margin: 0 auto 1em;
+    max-width: 270px;
+    width: 70%;
+    height: 2px;
+    background-color: #ff9800;
+    border: none;
+}
+
+.header-description {
+    max-width: 420px;
+    margin: 1.5em auto 0;
+    font-weight: 400;
+    font-size: 1em;
+    color: #b9e0f2;
+}
+
+/*--------------------Main--------------------*/
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.form-section {
+    width: 100%;
+    margin-top: 25px;
+    display: none;
+    animation: fadein 0.5s linear forwards;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.form-section .container {
+    flex-direction: row;
+}
+
+#localWeather-wrapper {
+    display: none;
+}
+
+.mlw {
+    font-size: 23px;
+    text-align: center;
+    color: #ffc107;
+}
+
+#data-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 230px;
+    border: 7px solid dodgerblue;
+    border-radius: 16px;
+    margin: 10px 30px 0 0;
+    background-color: #ffeb3b;
+    opacity: 0.85;
+    font-size: 1.1em;
+    padding: 5px;
+    color: black;
+    box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
+}
+
+.myCity #country {
+    padding: 0.2em 0.6em;
+    border-radius: 30px;
+    color: #fff;
+    background: #ff8c00;
+}
+
+#temperature {
+    font-size: 4.0em;
+    font-weight: bold;
+}
+
+#icons {
+    height: 120px;
+    width: 120px;
+}
+
+#conditions {
+    font-size: 1.5em;
+}
+
+.form-wrapper {
+    color: #fff;
+}
+
+.form-wrapper form {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.form-wrapper form input {
+    width: 300px;
+    font-size: 1.9rem;
+    height: 40px;
+    padding: 5px 5px 10px;
+    border: none;
+    border-bottom: 1px solid;
+    -webkit-appearance: none;
+    background: none;
+    outline: none;
+    color: inherit;
+}
+
+.form-wrapper form input::placeholder {
+    color: currentColor;
+}
+
+.form-wrapper form button {
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    padding: 15px 20px;
+    margin-left: 15px;
+    border-radius: 5px;
+    background: #ff1e42;
+    transition: background 0.3s ease-in-out;
+    border: none;
+    outline: none;
+    color: inherit;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 25%);
+    position: relative;
+}
+
+.form-wrapper form button:hover {
+    background: #e01b3a;
+}
+
+.form-wrapper form button:active {
+    top: 2px;
+    box-shadow: 1px 1px 3px rgb(0 0 0 / 25%);
+}
+
+.form-wrapper form .msg {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    max-width: 450px;
+    min-height: 40px;
+}
+
+.list-section {
+    width: 100%;
+    margin: 70px 0 50px;
+    display: none;
+    animation: fadeup 0.5s linear forwards;
+}
+
+@keyframes fadeup {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+.list-section .container {
+    flex-direction: column;
+}
+
+.list-section .cities {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+}
+
+.list-section .city {
+    width: 700px;
+    height: 130px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background: #fff;
+    color: #53627c;
+    display: grid;
+    grid-gap: 20px 15px;
+    grid-template-columns: 30px 109px 177px 136px 172px;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
+}
+
+.city figcaption {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 15px;
+}
+
+.city .city-temp {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #1e2432;
+}
+
+.city .city-name:before {
+    content: attr(data-content) "";
+    font-size: 14px;
+    color: red;
+    position: absolute;
+    top: 24px;
+}
+
+.city .city-name sup {
+    padding: 0.2em 0.6em;
+    border-radius: 30px;
+    color: #fff;
+    background: #ff8c00;
+}
+
+.city .city-icon {
+    width: 100px;
+    height: 100px;
+}
+
+.city figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.city .button {
+    display: block;
+    width: 120px;
+    height: 26px;
+    background: #1ADECE;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    line-height: 14px;
+    color: #FFFFFF;
+    border: none;
+    position: relative;
+    cursor: pointer;
+}
+
+.city .button:active {
+    top: 2px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.city .divField {
+    display: none;
+    padding: 1px 10px;
+}
+
+.city .divField:focus,
+.city .divField:focus-visible {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #1adece;
+}
+
+.city .edit {
+    width: 100px;
+}
+
+.city .delete {
+    font-size: 25px;
+    color: red;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/*--------------------Footer--------------------*/
+
+footer {
+    margin: auto 0 1em;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.footer-copyright {
+    margin-bottom: 0;
+    font-weight: 400;
+    color: #e6f2ff;
+}
+
+.footer_social {
+    padding-top: 10px;
+}
+
+.fsi {
+    width: 25px;
+    margin: 0 10px;
+    color: #cfd2e2;
+    font-size: 1.5em;
+}
+
+.fsi:hover {
+    filter: brightness(150%);
+}
+
+.github,
+.linkedin {
+    display: inline-block;
+    transition: all 0.2s linear;
+}
+
+.github:before {
+    content: url("icons/git.svg");
+}
+
+.linkedin:before {
+    content: url("icons/linkedin.svg");
+}
+
+@media (max-width: 800px) {
+    .form-section .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #data-wrapper {
+        margin: 10px 0 0 0;
+    }
+
+    .form-wrapper {
+        margin-top: 30px;
+    }
+
+    .list-section .city {
+        width: 600px;
+        display: grid;
+        grid-gap: 20px 5px;
+        grid-template-columns: 40px 115px 199px 106px 119px;
+    }
+
+    .city .city-temp {
+        font-size: 4rem;
+    }
+
+    .city .city-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .city figcaption {
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 650px) {
+    .list-section .city {
+        width: 240px;
+        height: auto;
+        display: grid;
+        grid-gap: 0 0;
+        grid-template-columns: auto;
+        grid-template-rows: 27px 35px 81px 52px 97px;
+        justify-items: center;
+    }
+
+    .city .city-name:before {
+        text-align: center;
+        top: 64px;
+        left: 0;
+        right: 0;
+    }
+
+    .city .delete {
+        justify-self: end;
+        margin-right: 15px;
+    }
+}
+
+@media (max-width: 500px) {
+    .mlw {
+        font-size: 20px;
+    }
+
+    .myCity {
+        font-size: 22px;
+    }
+
+    #temperature {
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+    #icons {
+        height: 50px;
+        width: 50px;
+    }
+
+    #conditions {
+        font-size: 1.2em;
+    }
+
+    .form-wrapper form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-wrapper form input {
+        font-size: 1.5rem;
+    }
+
+    .form-wrapper form button {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .form-wrapper form .msg {
+        bottom: -58px;
+    }
+}
+
+@media (max-width: 350px) {
+    .form-wrapper form input {
+        width: 235px;
+    }
+
+    .form-wrapper form .msg {
+        bottom: -71px;
+    }
+}
