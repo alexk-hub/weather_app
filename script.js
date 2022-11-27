@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
     class Model {
         constructor(view) {
             this.view = view;
-            this.apiKey = "3a7b0a779bd7c9fd1ddf1124709248f1";
+            this.apiKey = "YOUR KEY";
             this.tasks = JSON.parse(localStorage.getItem("weatherList"));
             this.getLocalWeather = this.getLocalWeather.bind(this);
             this.getAllObservedCities = this.getAllObservedCities.bind(this);
